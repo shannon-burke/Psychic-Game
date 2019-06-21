@@ -27,6 +27,8 @@
 
 
 
+
+
     <div class="container">
         <h1>Psychic Game!</h1>
         <br>
@@ -47,7 +49,67 @@
     </div>
 
 
-    <script src="assets/game.js"></script>
+
+    <script type="text/javascript">
+
+        var computerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        var wins = 0;
+        var losses = 0;
+        var guessesLeft = 9;
+        var guessesSoFar = [];
+
+
+        document.onkeyup = function (event) {
+
+            var userGuess = event.key;
+
+            var computerChoice = computerLetters[Math.floor(Math.random() * computerLetters.length)];
+
+            if (userGuess === computerChoice) {
+                wins++;
+                guessesLeft = 9;
+                guessesSoFar = [];
+            }
+
+            if (userGuess != computerChoice) {
+                guessesLeft--;
+                guessesSoFar.push(userGuess);
+
+
+            }
+
+            if (guessesLeft === 0) {
+                guessesLeft = 9;
+                losses++;
+                guessesSoFar = [];
+            }
+
+            /*
+            document.getElementById("#guesses-so-far").innerHTML = guessesSoFar;
+            document.getElementById("#guesses-left").innerHTML = guessesLeft;
+            
+
+
+
+            var actualGuessesSoFar = document.getElementById("#guesses-so-far");
+            actualGuessesSoFar.textContent = guessesSoFar;
+
+            var actualGuessesLeft = document.getElementById("#guesses-left");
+            actualGuessesLeft.textContent = guessesLeft;
+
+            */
+
+            //The console logs below are to test to make sure my actual function works. Which, at this point, it seems to be!!
+            //inserting the HTML is still not working yet.
+            console.log(wins);
+            console.log(losses);
+            console.log(guessesLeft);
+            console.log(guessesSoFar);
+
+        }
+    </script>
+
 
 </body>
 

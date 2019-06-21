@@ -29,9 +29,19 @@ document.onkeyup = function (event) {
         guessesSoFar = [];
     }
 
-    var actualGuessesSoFar = document.getElementById("guesses-so-far");
-    actualGuessesSoFar.textContent += guessesSoFar;
+    /* commenting out bc it's not working and trying something else.
 
-    var actualGuessesLeft = document.getElementById("guesses-left");
-    actualGuessesLeft.textContent += guessesLeft;
+     var actualGuessesSoFar = document.getElementById("guesses-so-far");
+     actualGuessesSoFar.textContent = guessesSoFar;
+ 
+     var actualGuessesLeft = document.getElementById("guesses-left");
+     actualGuessesLeft.textContent = guessesLeft;
+     
+ This also doesn't work, ugh.
+    document.getElementById("guesses-so-far").innerHTML = guessesSoFar;
+    document.getElementById("guesses-left").innerHTML = guessesLeft;
+
+    console.log(guessesLeft);
+
+    */
 }
