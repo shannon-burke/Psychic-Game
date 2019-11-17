@@ -1,7 +1,7 @@
 # Psychic-Game
 A simple, single-page applications that uses keystroke events to capture a user's input and compare it to the randomly generated computer choice. 
 
-##_Things to work on:_
+## Things to work on:
 - spaces between the letters
 - fun styling
 - only allowing letters to be accepted as valid keystrokes
