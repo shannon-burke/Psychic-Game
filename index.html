@@ -5,58 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Psychic Game
+    <title>Crystal Ball Psychic Game
     </title>
-</head>
 
-<body>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Aladin&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <link rel="stylesheet" href="assets/style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+</head>
 
+<body>
 
+    <h1 id="title" class="animated fadeInDown slow">Crystal Ball Psychic</h1>
 
+    <div id="instructions" class="animated fadeIn delay-1s">
+        <p>Press a letter on your keyboard to see if you can guess the psychic's selection. Your incorrect guesses will
+            appear within the crystal ball.</p>
+    </div>
 
-
-
-    <div class="container">
-        <h1>Psychic Game!</h1>
-        <br>
-        <h2>Type a letter to guess. If it matches what the computer chose, you win!</h2>
-        <hr>
-        <div class="bg-secondary text-white">
-            <div class="col-md-10">
-                <h4>Wins:</h4>
-                <p id="wins"></p>
-
-                <h3>Losses:</h3>
-                <p id="losses"></p>
-
-                <h3>Guesses Left:</h3>
-                <p id="guesses-left"></p>
-
-                <h3>Your Guesses So Far:</h3>
-                <p id="guesses-so-far"></p>
-            </div>
+    <div id="crystal-ball" class="animated fadeIn slow delay-2s">
+        <div id="guesses">
+            <div id="g1"></div>
+            <div id="g2"></div>
+            <div id="g3"></div>
+            <div id="g4"></div>
+            <div id="g5"></div>
+            <div id="g6"></div>
+            <div id="g7"></div>
+            <div id="g8"></div>
+            <div id="g9"></div>
         </div>
+    </div>
 
+    <div id="scores">
+        <div id="wins-div">Wins:<span id="wins"></span></div>
+        <div id="losses-div">Losses:<span id="losses"></span></div>
+        <div id="guesses-left-div">Guesses Remaining:<span id="guesses-left"></span></div>
     </div>
 
 
 
     <script src="assets/game.js"></script>
-
-
 </body>
 
 </html>

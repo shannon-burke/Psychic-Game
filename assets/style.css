@@ -1,0 +1,53 @@
+body {
+    font-family: 'Aladin', cursive;
+    text-align: center;
+    background-color: #F6E9E9;
+}
+
+#title {
+    margin: auto;
+    font-size: 6vw;
+    color: #350F40;
+    text-shadow: 2px 2px 4px #441259;
+}
+
+#instructions {
+    margin: auto;
+    width: 60vw;
+    font-size: 2vw;
+    color: #441259;
+}
+
+#crystal-ball {
+    width: 45vw;
+    height: 45vw;
+    margin: auto;
+    background-image: url("psychicGameCrystalBall.svg");
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #441259;
+}
+#guesses {
+    width: 28vw;
+    height:28vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 5vw;
+}
+
+#scores {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    color: #F6E9E9;
+    background-color: #350F40;
+    font-size: 2vw;
+    margin: auto;
+    text-align: center;
+    width: 50vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+}

@@ -12,59 +12,52 @@ document.onkeyup = function (event) {
 
     var computerChoice = computerLetters[Math.floor(Math.random() * computerLetters.length)];
 
-    if (userGuess === computerChoice) {
-        wins++;
+    function resetGame() {
         guessesLeft = 9;
         guessesSoFar = [];
+    }
+
+    if (userGuess === computerChoice) {
+        guessesSoFar.push(userGuess);
+        wins++;
+        resetGame();
     }
 
     if (userGuess != computerChoice) {
-        guessesLeft--;
-        guessesSoFar.push(userGuess);
-
-
+        if (guessesSoFar.includes(userGuess)) {
+            return;
+        }
+        else {
+            guessesLeft--;
+            guessesSoFar.push(userGuess);
+        }
     }
 
     if (guessesLeft === 0) {
-        guessesLeft = 9;
+        guessesSoFar.push(userGuess);
         losses++;
-        guessesSoFar = [];
+        resetGame();
     }
 
-    /*
-    document.getElementById("#guesses-so-far").innerHTML = guessesSoFar;
-    document.getElementById("#guesses-left").innerHTML = guessesLeft;
-    
+    $("#wins").empty().append(" " + wins);
+    $("#losses").empty().append(" " + losses);
+    $("#guesses-left").empty().append(" " + guessesLeft);
+    // $("#guesses-so-far").empty().append(guessesSoFar);
+    $("#g1").empty().append(guessesSoFar[0]);
+    $("#g2").empty().append(guessesSoFar[1]);
+    $("#g3").empty().append(guessesSoFar[2]);
+    $("#g4").empty().append(guessesSoFar[3]);
+    $("#g5").empty().append(guessesSoFar[4]);
+    $("#g6").empty().append(guessesSoFar[5]);
+    $("#g7").empty().append(guessesSoFar[6]);
+    $("#g8").empty().append(guessesSoFar[7]);
+    $("#g9").empty().append(guessesSoFar[8]);
 
 
-
-    var actualGuessesSoFar = document.getElementById("#guesses-so-far");
-    actualGuessesSoFar.textContent = guessesSoFar;
-
-    var actualGuessesLeft = document.getElementById("#guesses-left");
-    actualGuessesLeft.textContent = guessesLeft;
-
-
-    
-    actualGuessesSoFar = document.getElementById("guesses-so-far");
-    txt = document.createTextNode("your cool text");
-    span.appendChild(txt);
-
-    */
-
-    //The console logs below are to test to make sure my actual function works. Which, at this point, it seems to be!!
-    //inserting the HTML is still not working yet.
-    console.log(wins);
-    console.log(losses);
-    console.log(guessesLeft);
-    console.log(guessesSoFar);
-
-
-    //I finally got something to work! I wanted to add spaces between the guesses so far, but couldn't get it to work. 
-    document.getElementById("wins").innerHTML = wins;
-    document.getElementById("losses").innerHTML = losses;
-    document.getElementById("guesses-left").innerHTML = guessesLeft;
-    document.getElementById("guesses-so-far").innerHTML = " " + guessesSoFar;
+    // document.getElementById("wins").innerHTML = wins;
+    // document.getElementById("losses").innerHTML = losses;
+    // document.getElementById("guesses-left").innerHTML = guessesLeft;
+    // document.getElementById("guesses-so-far").innerHTML = guessesSoFar;
 
 
 }
